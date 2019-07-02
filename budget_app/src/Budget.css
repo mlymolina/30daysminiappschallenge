@@ -1,0 +1,23 @@
+#budget-form {
+  display: flex;
+  border-radius: 5px;
+  padding: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input{
+  width: 30%;
+}
+#budget-form input.btn{
+  background-color: rgba(77, 164, 77, 0.803);
+  color:white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+#budget-form input {
+  padding: 5px;
+  border: 0;
+  border-bottom: 0.5px solid rgba(77, 164, 77, 0.803);
+  width: 100%;
+}

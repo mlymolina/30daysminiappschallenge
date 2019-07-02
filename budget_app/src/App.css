@@ -1,0 +1,33 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+.container {
+  margin: 0 auto;
+  width: 700px;
+}
+nav{
+  background-color: rgba(77, 164, 77, 0.803);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+i {
+  font-size: 3em;
+  color:rgba(77, 164, 77, 0.803);
+}
+.overview-item {
+  cursor: pointer;
+  margin-right: 50px;
+}
+#budget-overview .balance{
+  color:rgba(77, 164, 77, 0.803);
+}
+#expenses-overview .balance{
+  color: rgba(255, 0, 0, 0.728);
+}
+#overview {
+  display: flex;
+  margin-top: 20px;
+  padding: 10px;
+  justify-content: flex-start;
+}
