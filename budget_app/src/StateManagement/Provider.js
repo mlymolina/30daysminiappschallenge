@@ -13,6 +13,10 @@ export default class BudgetProvider extends React.Component {
     return !isNaN(parseFloat(number) && isFinite(number))
   }
 
+  getFormattedNumber(){
+
+  }
+
   getBudget() {
     let transactions = this.state.transactions
     const reducer = (accumulator, current) => current.amount > 0 ? accumulator + current.amount : accumulator
@@ -37,6 +41,11 @@ export default class BudgetProvider extends React.Component {
     if (isExpense && this.isNumeric(transaction.amount)) {
       amount = -1 * parseFloat(amount)
       transactions.push({description: description, amount: amount})
+    } else if (!isExpense && this.isNumeric(transaction.amount)) {
+      amount = parseFloat(amount)
+      transactions.push({description: description, amount: amount})
+    } else {
+      alert('Transaction is not valid, amount should be a number')
     }
     
     this.setState({transactions: transactions})
@@ -48,7 +57,7 @@ export default class BudgetProvider extends React.Component {
         value={{
           transactions: this.state.transactions,
           addTransaction: this.addTransaction.bind(this),
-          expenses: this.getExpenses(),
+          expenses: -1 * this.getExpenses(),
           budget: this.getBudget(),
           balance: this.getBalance()
         }}
