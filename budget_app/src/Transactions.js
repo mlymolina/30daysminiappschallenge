@@ -8,17 +8,25 @@ export default class Transactions extends React.Component {
     return (
       <BudgetContext.Consumer>
         {context => (
-          <div id='transactions'>
-            {context.transactions.map((transaction, i) => {
-              return (
-                <Transaction
-                  key={i} 
-                  description={transaction.description}
-                  amount={transaction.amount}
-                />
-              )
-            })}
-          </div>
+          <table id='transactions'>
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {context.transactions.map((transaction, i) => {
+                return (
+                  <Transaction
+                    key={i} 
+                    description={transaction.description}
+                    amount={transaction.amount}
+                  />
+                )
+              })}
+            </tbody>
+          </table>
         )}
       </BudgetContext.Consumer>
     )

@@ -24,7 +24,7 @@ export default class App extends React.Component {
             <div className="App">
               <nav><div className='container'>MY BUDGET APP</div></nav>
               <div className='container'>
-                <Overview budget={0} expenses={0} balance={0}/>
+                <Overview budget={context.budget} expenses={context.expenses} balance={context.balance}/>
                 <Budget />
                 <Expenses />
                 <Transactions />
