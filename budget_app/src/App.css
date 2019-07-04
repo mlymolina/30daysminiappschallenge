@@ -31,3 +31,11 @@ i {
   padding: 10px;
   justify-content: flex-start;
 }
+
+.debt {
+  color: red;
+}
+
+.no-debt {
+  color: green;
+}

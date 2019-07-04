@@ -1,6 +1,5 @@
 #expenses-form {
   display: flex;
-  /* border: 0.5px solid rgba(255, 0, 0, 0.728); */
   border-radius: 5px;
   padding: 15px;
   align-items: center;
@@ -16,6 +15,10 @@ input.btn{
   font-weight: bold;
   border-radius: 5px;
 }
+input.btn:hover{
+  background-color: rgba(207, 7, 7, 0.927);
+}
+
 input {
   padding: 5px;
   border: 0;
@@ -26,4 +29,10 @@ input {
 input::placeholder {
   font-family: 'Lato', sans-serif;
   font-size: 1.2em;
+}
+
+input:hover{
+  /* box-shadow:3px 2px 2px 1px rgba(184, 184, 187, 0.2); */
+  font-weight: bold;
+  cursor: pointer;
 }

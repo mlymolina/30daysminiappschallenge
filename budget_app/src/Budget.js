@@ -48,7 +48,7 @@ export default class Budget extends React.Component {
               <input 
                 type="submit" 
                 value='Add Budget'
-                className='btn'
+                className='btn budget'
                 onClick={() => context.addTransaction(this.state, false)}/>
             </div>
           </div>

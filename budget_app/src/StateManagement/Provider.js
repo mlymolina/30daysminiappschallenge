@@ -13,8 +13,8 @@ export default class BudgetProvider extends React.Component {
     return !isNaN(parseFloat(number) && isFinite(number))
   }
 
-  getFormattedNumber(){
-
+  getFormattedNumber(number){
+    return (number).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
   }
 
   getBudget() {
@@ -36,10 +36,10 @@ export default class BudgetProvider extends React.Component {
   addTransaction(transaction, isExpense) {
     let transactions = this.state.transactions.slice(0)
     let amount = transaction.amount
-    let description = transaction.description
+    let description = transaction.description !== "" ? transaction.description : 'Unknown'
 
     if (isExpense && this.isNumeric(transaction.amount)) {
-      amount = -1 * parseFloat(amount)
+      amount = parseFloat(amount) > 0 ? parseFloat(amount) * -1 : parseFloat(amount)
       transactions.push({description: description, amount: amount})
     } else if (!isExpense && this.isNumeric(transaction.amount)) {
       amount = parseFloat(amount)
@@ -51,6 +51,10 @@ export default class BudgetProvider extends React.Component {
     this.setState({transactions: transactions})
   }
 
+  clearInput() {
+
+  }
+  
   render(){
     return(
       <BudgetContext.Provider
@@ -59,7 +63,8 @@ export default class BudgetProvider extends React.Component {
           addTransaction: this.addTransaction.bind(this),
           expenses: -1 * this.getExpenses(),
           budget: this.getBudget(),
-          balance: this.getBalance()
+          balance: this.getBalance(),
+          getFormattedNumber: this.getFormattedNumber.bind(this)
         }}
       >
         {this.props.children}
