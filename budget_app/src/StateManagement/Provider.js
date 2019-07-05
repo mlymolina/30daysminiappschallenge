@@ -5,7 +5,7 @@ export default class BudgetProvider extends React.Component {
   constructor() {
     super()
     this.state = {
-      transactions: [{description: 'house', amount: 10}]
+      transactions: []
     }
   }
 
