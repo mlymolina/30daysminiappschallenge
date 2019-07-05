@@ -10,11 +10,15 @@ export default class CalculatorProvider extends React.Component {
     }
   }
 
+  onClick(event) {
+    console.log(event.target.value)
+  }
+
   render() {
     return(
       <CalculatorContext.Provider
         value={{
-
+          onBtnClick: this.onClick.bind(this)
         }}
       >
         {this.props.children}
