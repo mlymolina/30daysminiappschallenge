@@ -10,8 +10,8 @@ export default class CalculatorProvider extends React.Component {
     }
   }
 
-  onClick(event) {
-    console.log(event.target.id)
+  onClick(id) {
+    console.log(id)
   }
 
   render() {
