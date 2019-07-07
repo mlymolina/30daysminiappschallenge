@@ -1,32 +1,34 @@
 import React from 'react'
+import { Button, ButtonTypes } from './Button'
 import CalculatorContext from './StateManagement/Context'
  
 export default class Keyboard extends React.Component {
   render() {
     return (
+      // TODO: Do we need the context anymore?
       <CalculatorContext.Consumer>
         {context => (
           <div id="keyboard">
-            <button className="operator" id="clear" onClick={context.onBtnClick.bind(this)}>C</button>
-            <button className="operator" id="backspace" onClick={context.onBtnClick.bind(this)}>CE</button>
-            <button className="operator" id="%" onClick={context.onBtnClick.bind(this)}>%</button>
-            <button className="operator" id="/" onClick={context.onBtnClick.bind(this)}>&#247;</button>
-            <button className="number" id="7" onClick={context.onBtnClick.bind(this)}>7</button>
-            <button className="number" id="8" onClick={context.onBtnClick.bind(this)}>8</button>
-            <button className="number" id="9" onClick={context.onBtnClick.bind(this)}>9</button>
-            <button className="operator" id="*" onClick={context.onBtnClick.bind(this)}>&times;</button>
-            <button className="number" id="4" onClick={context.onBtnClick.bind(this)}>4</button>
-            <button className="number" id="5" onClick={context.onBtnClick.bind(this)}>5</button>
-            <button className="number" id="6" onClick={context.onBtnClick.bind(this)}>6</button>
-            <button className="operator" id="-" onClick={context.onBtnClick.bind(this)}>-</button>
-            <button className="number" id="1" onClick={context.onBtnClick.bind(this)}>1</button>
-            <button className="number" id="2" onClick={context.onBtnClick.bind(this)}>2</button>
-            <button className="number" id="3" onClick={context.onBtnClick.bind(this)}>3</button>
-            <button className="operator" id="+" onClick={context.onBtnClick.bind(this)}>+</button>
-            <button className="empty" id="empty" onClick={context.onBtnClick.bind(this)}></button>
-            <button className="number" id="0" onClick={context.onBtnClick.bind(this)}>0</button>
-            <button className="empty" id="empty" onClick={context.onBtnClick.bind(this)}></button>
-            <button className="operator" id="=" onClick={context.onBtnClick.bind(this)}>=</button>
+            <Button type={ButtonTypes.clear} />
+            <Button type={ButtonTypes.backspace} />
+            <Button type={ButtonTypes.pct} />
+            <Button type={ButtonTypes.division} />
+            <Button type={ButtonTypes['7']} />
+            <Button type={ButtonTypes['8']} />
+            <Button type={ButtonTypes['9']} />
+            <Button type={ButtonTypes.multiply} />
+            <Button type={ButtonTypes['4']} />
+            <Button type={ButtonTypes['5']} />
+            <Button type={ButtonTypes['6']} />
+            <Button type={ButtonTypes.minus} />
+            <Button type={ButtonTypes['1']} />
+            <Button type={ButtonTypes['2']} />
+            <Button type={ButtonTypes['3']} />
+            <Button type={ButtonTypes.plus} />
+            <Button type={ButtonTypes.empty} />
+            <Button type={ButtonTypes['0']} />
+            <Button type={ButtonTypes.empty} />
+            <Button type={ButtonTypes.equals} />
           </div>
         )}
       </CalculatorContext.Consumer>
