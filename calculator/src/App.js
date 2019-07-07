@@ -12,7 +12,7 @@ function App() {
         {context => (
           <div id="container">
             <div id="calculator">
-              <Display />
+              <Display history={context.history} result={context.result}/>
               <Keyboard />
             </div>
           </div>

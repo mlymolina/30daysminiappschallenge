@@ -4,8 +4,12 @@ export default class Display extends React.Component {
   render(){
     return(
       <div id="result">
-        <div id="history"><p id="history-value"></p></div>
-        <div id="output"><p id="output-value"></p></div>
+        <div id="history">
+          <p id="history-value">{this.props.history}</p>
+        </div>
+        <div id="output">
+          <p id="output-value">{this.props.result}</p>
+        </div>
       </div>
     )
   }

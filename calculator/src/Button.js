@@ -2,7 +2,6 @@ import React from 'react'
 import CalculatorContext from './StateManagement/Context'
 
 export const Button = (props) => {
-  console.log(props)
   const { className, id } = props.type
   return (
     <CalculatorContext.Consumer>
