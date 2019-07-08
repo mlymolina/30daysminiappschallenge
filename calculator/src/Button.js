@@ -7,7 +7,7 @@ export const Button = (props) => {
     <CalculatorContext.Consumer>
       {context => (
         <button className={className}
-          onClick={() => context.onBtnClick(id)}>
+          onClick={() => context.onBtnClick(id, props.type)}>
           {id}
         </button>
       )}
