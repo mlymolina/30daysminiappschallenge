@@ -38,7 +38,7 @@ export default class App extends React.Component {
     }
     return (
       <div className="App" style={quoteStyle}>
-        <Quote quote={this.state.quote} author={this.state.author}/>
+        <Quote quote={this.state.quote} author={this.state.author} background={this.state.background}/>
         <footer>
           <i className="fa fa-copyright" aria-hidden="true"></i>
           <p>{this.state.copyright}</p>

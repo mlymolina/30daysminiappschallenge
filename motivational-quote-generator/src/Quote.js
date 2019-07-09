@@ -10,8 +10,10 @@ export default class Quote extends React.Component{
         </div>
         <p>- {this.props.author}</p>
         <div id='btn'> 
-          <i className="fab fa-instagram"></i>
           <i className="far fa-save"></i>
+          <a href={`https://www.facebook.com/sharer/sharer.php?u=${this.props.background}`}>
+            <i className="fab fa-facebook"></i>
+          </a>
           <a className="twitter-share-button"
             href={`https://twitter.com/intent/tweet?text=${this.props.quote}%20-${this.props.author}`}
             data-size="large">
