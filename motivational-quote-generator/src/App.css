@@ -33,6 +33,16 @@ footer p {
   margin: 0 5px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none; 
+  cursor: pointer;  
+}
+
 #btn {
   display: flex;
   justify-content: space-around;
