@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Project from './Project'
+import TrackerContext from './StateManagement/Context'
+import TrackerProvider from './StateManagement/Provider'
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <TrackerProvider>
+      <TrackerContext.Consumer>
+        {context => (
+          <div className="App">
+            <div className='navbar'>
+              <p>My Projects Tracker</p></div>
+            <div className='container'>
+              {context.projects.map((project, i) => {
+                return (
+                  <Project key={i} project={project}/>  
+                )
+              })}
+            </div>
+          </div>
+        )}
+      </TrackerContext.Consumer>
+    </TrackerProvider>
+  )
 }
 
-export default App;
+export default App
