@@ -11,8 +11,12 @@ function App() {
         {context => (
           <div className="App">
             <div className='navbar'>
-              <p>My Projects Tracker</p></div>
+              <p>My Projects Tracker</p>
+            </div>
             <div className='container'>
+              <a href="https://www.w3schools.com">
+                <i className="fas fa-plus-circle"></i>
+              </a>
               {context.projects.map((project, i) => {
                 return (
                   <Project key={i} project={project}/>  
