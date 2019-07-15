@@ -1,5 +1,6 @@
 import React from 'react'
 import Project from './Project'
+import Modal from './Modal'
 import TrackerContext from './StateManagement/Context'
 import TrackerProvider from './StateManagement/Provider'
 import './App.css'
@@ -14,9 +15,7 @@ function App() {
               <p>My Projects Tracker</p>
             </div>
             <div className='container'>
-              <a href="https://www.w3schools.com">
-                <i className="fas fa-plus-circle"></i>
-              </a>
+              <Modal visible={context.formVisible} toggle={context.toggleModal}/>
               {context.projects.map((project, i) => {
                 return (
                   <Project key={i} project={project}/>  

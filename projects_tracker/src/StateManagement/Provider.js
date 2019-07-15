@@ -26,8 +26,17 @@ export default class TrackerProvider extends React.Component {
           deadline: '12-12-19',
           completion: 10
         }
-      ]
+      ],
+      formVisible: false
     }
+  }
+
+  toggleModal() {
+    if (this.state.formVisible) {
+      this.setState({formVisible: false})
+    } else {
+      this.setState({formVisible: true})
+    } 
   }
 
   render() {
@@ -35,7 +44,8 @@ export default class TrackerProvider extends React.Component {
       <TrackerContext.Provider
         value={{
           projects: this.state.projects,
-          percentage: this.state.projects[0].completion
+          formVisible: this.state.formVisible,
+          toggleModal: this.toggleModal.bind(this)
         }}>
         {this.props.children}
       </TrackerContext.Provider>
