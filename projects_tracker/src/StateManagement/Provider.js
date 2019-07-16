@@ -39,13 +39,19 @@ export default class TrackerProvider extends React.Component {
     } 
   }
 
+  addProject(project) {
+    console.log('hola')
+    console.log(project)
+  }
+
   render() {
     return (
       <TrackerContext.Provider
         value={{
           projects: this.state.projects,
           formVisible: this.state.formVisible,
-          toggleModal: this.toggleModal.bind(this)
+          toggleModal: this.toggleModal.bind(this),
+          addProject: this.addProject.bind(this)
         }}>
         {this.props.children}
       </TrackerContext.Provider>

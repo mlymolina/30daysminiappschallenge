@@ -27,10 +27,12 @@
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
-  background-color: lightgray;
+  background-color: lightcoral;
+  color: white;
+  font-weight: bolder;
 }
 .close-button:hover {
-  background-color: darkgray;
+  background-color: red;
 }
 .show-modal {
   opacity: 1;
@@ -65,4 +67,34 @@ button:focus {
 
 button:hover {
   color: rgba(171, 205, 216, 0.7);
+}
+
+.project-input {
+  padding: 10px;
+}
+
+label {
+  font-weight: bold;
+  color: rgba(159, 170, 174, 0.94);
+}
+
+input[type=text], input[type=date] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid rgba(23, 179, 85, 0.509);
+}
+input[type=submit] {
+  background-color: rgba(23, 179, 85, 0.509);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+input[type=submit]:hover{
+  background-color: rgba(23, 179, 85, 0.8);
+  cursor: pointer;
 }

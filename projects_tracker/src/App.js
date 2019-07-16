@@ -15,7 +15,7 @@ function App() {
               <p>My Projects Tracker</p>
             </div>
             <div className='container'>
-              <Modal visible={context.formVisible} toggle={context.toggleModal}/>
+              <Modal visible={context.formVisible} toggle={context.toggleModal} addProject={context.addProject}/>
               {context.projects.map((project, i) => {
                 return (
                   <Project key={i} project={project}/>  
